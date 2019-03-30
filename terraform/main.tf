@@ -79,3 +79,4 @@ resource "google_compute_project_metadata" "ssh_keys" {
     ssh-keys = "user1:${file(var.public_key_path)}\nuser2:${file(var.public_key_path)}"
   }
 }
+
