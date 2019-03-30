@@ -58,3 +58,37 @@ gcloud compute instances create reddit-app \
 gcloud compute firewall-rules create default-puma-server --allow=tcp:9292 --target-tags puma-server
 ````
 
+ДЗ к занятию 7
+Выполнено:
+
+Был создан шаблон ubuntu16 для packer c переменными в файле variables.json с приложениями ruby и mongodb
+Было создано семейство образов reddit-base в Google Cloud средствами packer
+Был создан шаблон immutable для packer с нашим приложением reddit
+Создан автозапуск приложения reddit
+Было создано семейство образов reddit-full в Google Cloud средствами packer поверх reddit-base
+
+ДЗ к занятию 8
+Код терраформа добавление ssh ключей нескольких пользователей
+````
+resource "google_compute_project_metadata" "ssh_keys" {
+  metadata {
+    ssh-keys = "user1:${file(var.public_key_path)}\nuser2:${file(var.public_key_path)}"
+  }
+}
+````
+После добавления в веб интерфейсе ssh ключ пользователю appuser_web и выполните terraform apply данные ключа удалились
+
+
+LOADBALANCER
+
+output
+
+````
+output "lb_external_ip" {
+  value = "${google_compute_forwarding_rule.puma_forwarding_rule.ip_address}"
+}
+````
+
+
+
+
