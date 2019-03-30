@@ -29,3 +29,6 @@ variable zone {
   # Значение по умолчанию
   default = "europe-west3-b"
 }
+variable "node_count" {
+  default = "1"
+ }
