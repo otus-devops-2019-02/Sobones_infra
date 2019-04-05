@@ -24,4 +24,3 @@ resource "google_compute_forwarding_rule" "puma_forwarding_rule" {
 
   port_range = "9292"
 }
-
