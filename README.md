@@ -107,5 +107,19 @@ output "lb_external_ip" {
 TASK [Clone repo] ***************************************************************************************************
 changed: [appserver]
 ````
+ДЗ 11 урока
+В процессе сделано:
+Работа с одним плейбуком
+Работа с несколькими плейбуками
+
+При сборке packer-ом используется provisioner ansible
+образ не собирался без использования таска в файлах packer_app.yml packer_db.yml
+
+
+
+````
+- name: DELETE list lock
+    shell: rm /var/lib/apt/lists/lock
+````
 
 
