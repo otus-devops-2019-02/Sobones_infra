@@ -11,8 +11,8 @@
     dest: "/home/{{ deploy_user }}/db_config"
     owner: "{{ deploy_user }}"
     group: "{{ deploy_user }}"
-    
 
 - name: enable puma
   systemd: name=puma enabled=yes
+
 
